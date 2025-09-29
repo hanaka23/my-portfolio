@@ -6,6 +6,7 @@ export default function Works() {
   return (
     <>
     <div className="bg-[#000] w-full pt-[60] pb-[60]">
+      <h2 className="text-center text-[#fff]">Works</h2>
       <div className="flex justify-center gap-[30] text-[#fff]">
         <div className="text-center">
           <div>
