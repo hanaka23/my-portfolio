@@ -48,10 +48,7 @@ export const works = [
     id: "nuxt-todo-app",
     title: "Nuxtを用いたTodoアプリ",
     sections: [
-      {
-        heading: "【概要】",
-        body: "Nuxtの学習を目的としてTodoアプリを作成した。",
-      },
+      { heading: "【概要】", body: "Nuxtの学習を目的としてTodoアプリを作成した。" },
       {
         heading: "【機能】",
         body: "Todo新規作成、削除、完了チェック、全て／未完了のタブ切り替え、Firestoreによるデータ保存・取得・同期。",
@@ -72,12 +69,17 @@ export const works = [
     ],
     image: [
       {
-        src: "nuxt_todo/nuxt_todo.png",
+        src: "vue_todo/vue_todo.png",
+        alt: "Nuxt Todoアプリのトップ画像",
+        caption: "トップ画像",
+      },
+      {
+        src: "vue_todo/vue_todo.png",
         alt: "Nuxt TodoアプリのTodo一覧画面",
         caption: "Todo一覧画面",
       },
       {
-        src: "nuxt_todo/nuxt_todo2.png",
+        src: "vue_todo/vue_todo2.png",
         alt: "Nuxt Todoアプリのフィルタ切り替え画面",
         caption: "完了・未完了切り替え",
       },
@@ -88,10 +90,7 @@ export const works = [
     id: "swift-life-graph",
     title: "Swiftを用いた人生グラフアプリ",
     sections: [
-      {
-        heading: "【概要】",
-        body: "Swift学習の一環として、人生の幸福度を可視化するアプリを作成した。",
-      },
+      { heading: "【概要】", body: "Swift学習の一環として、人生の幸福度を可視化するアプリを作成した。" },
       { heading: "【作業人数】", body: "1人" },
       { heading: "【制作期間】", body: "1日" },
       {
@@ -102,17 +101,22 @@ export const works = [
     tech: ["ツール：Xcode", "言語：Swift", "フレームワーク：SwiftUI"],
     image: [
       {
-        src: "swift_lifeGraph/swift_lifeGraph_1.png",
+        src: "swift_life_graph/swift_life_graph.png",
+        alt: "人生グラフアプリのトップ画像",
+        caption: "トップ画像",
+      },
+      {
+        src: "swift_life_graph/swift_life_graph_1.png",
         alt: "人生グラフアプリの入力画面",
         caption: "入力画面",
       },
       {
-        src: "swift_lifeGraph/swift_lifeGraph_2.png",
+        src: "swift_life_graph/swift_life_graph_2.png",
         alt: "人生グラフアプリのグラフ表示",
         caption: "グラフ表示",
       },
       {
-        src: "swift_lifeGraph/swift_lifeGraph_3.png",
+        src: "swift_life_graph/swift_life_graph_3.png",
         alt: "人生グラフアプリのコメント表示",
         caption: "コメント表示",
       },
@@ -123,15 +127,17 @@ export const works = [
     id: "swift-quiz-app",
     title: "Swiftを用いたクイズアプリ",
     sections: [
-      {
-        heading: "【概要】",
-        body: "Swift学習の一環としてクイズアプリを作成した。",
-      },
+      { heading: "【概要】", body: "Swift学習の一環としてクイズアプリを作成した。" },
       { heading: "【作業人数】", body: "1人" },
       { heading: "【制作期間】", body: "1日" },
     ],
     tech: ["ツール：Xcode", "言語：Swift", "フレームワーク：SwiftUI"],
     image: [
+      {
+        src: "swift_quiz/swift_quiz.png",
+        alt: "Swiftクイズアプリのトップ画像",
+        caption: "トップ画像",
+      },
       {
         src: "swift_quiz/swift_quiz_1.png",
         alt: "Swiftクイズアプリの問題画面",
@@ -154,10 +160,7 @@ export const works = [
     id: "flutter-message-app",
     title: "FlutterとFirebaseを用いたメッセージ投稿アプリ",
     sections: [
-      {
-        heading: "【概要】",
-        body: "FlutterとFirebaseを用いてメッセージ投稿アプリを作成した。",
-      },
+      { heading: "【概要】", body: "FlutterとFirebaseを用いてメッセージ投稿アプリを作成した。" },
       { heading: "【作業人数】", body: "1人" },
       { heading: "【制作期間】", body: "1日" },
     ],
@@ -167,6 +170,11 @@ export const works = [
       "フレームワーク：Flutter",
     ],
     image: [
+      {
+        src: "flutter_message/flutter_message.png",
+        alt: "Flutterメッセージアプリのトップ画像",
+        caption: "トップ画像",
+      },
       {
         src: "flutter_message/flutter_message_1.png",
         alt: "Flutterメッセージアプリの投稿画面",
@@ -189,10 +197,7 @@ export const works = [
     id: "lp-headphone",
     title: "高級ヘッドホンLP制作",
     sections: [
-      {
-        heading: "【概要】",
-        body: "デザインカンプをもとにレスポンシブコーディングを実施した。",
-      },
+      { heading: "【概要】", body: "デザインカンプをもとにレスポンシブコーディングを実施した。" },
       { heading: "【実施内容】", body: "コーディング" },
       { heading: "【制作期間】", body: "1週間" },
       {
@@ -202,6 +207,11 @@ export const works = [
     ],
     tech: ["ツール：Visual Studio Code", "言語：HTML, CSS, JavaScript"],
     image: [
+      {
+        src: "lp_headphone/lp_headphone.png",
+        alt: "高級ヘッドホンLPのトップ画像",
+        caption: "トップ画像",
+      },
       {
         src: "lp_headphone/lp_headphone_pc.png",
         alt: "高級ヘッドホンLP",
@@ -214,19 +224,21 @@ export const works = [
     id: "lp-vegetable",
     title: "野菜宅配サービスLP制作",
     sections: [
-      {
-        heading: "【概要】",
-        body: "デザインカンプをもとにレスポンシブコーディングを実施した。",
-      },
+      { heading: "【概要】", body: "デザインカンプをもとにレスポンシブコーディングを実施した。" },
       { heading: "【実施内容】", body: "コーディング" },
       { heading: "【制作期間】", body: "1週間" },
       {
         heading: "【ポイント・工夫点】",
-        body: `JavaScriptを使用し、各種アニメーション・スライダーなど複数の動的UIを実装した。`,
+        body: "JavaScriptを使用し、各種アニメーション・スライダーなど複数の動的UIを実装した。",
       },
     ],
     tech: ["ツール：Visual Studio Code", "言語：HTML, CSS, JavaScript"],
     image: [
+      {
+        src: "lp_vegetable/lp_vegetable.png",
+        alt: "野菜宅配サービスLPのトップ画像",
+        caption: "トップ画像",
+      },
       {
         src: "lp_vegetable/lp_vegetable_pc.png",
         alt: "野菜宅配サービスLP",
@@ -239,15 +251,17 @@ export const works = [
     id: "lp-suncream",
     title: "日焼け止めLP制作",
     sections: [
-      {
-        heading: "【概要】",
-        body: "デザインカンプをもとにレスポンシブコーディングを実施した。",
-      },
+      { heading: "【概要】", body: "デザインカンプをもとにレスポンシブコーディングを実施した。" },
       { heading: "【実施内容】", body: "コーディング" },
       { heading: "【制作期間】", body: "1週間" },
     ],
     tech: ["ツール：Visual Studio Code", "言語：HTML, CSS, JavaScript"],
     image: [
+      {
+        src: "lp_suncream/lp_suncream.png",
+        alt: "日焼け止めLPのトップ画像",
+        caption: "トップ画像",
+      },
       {
         src: "lp_suncream/lp_suncream_pc.png",
         alt: "日焼け止めLP",
@@ -260,15 +274,17 @@ export const works = [
     id: "media-site",
     title: "メディアサイト制作",
     sections: [
-      {
-        heading: "【概要】",
-        body: "デザインカンプをもとにレスポンシブコーディングを実施した。",
-      },
+      { heading: "【概要】", body: "デザインカンプをもとにレスポンシブコーディングを実施した。" },
       { heading: "【実施内容】", body: "コーディング" },
       { heading: "【制作期間】", body: "20時間" },
     ],
     tech: ["ツール：Visual Studio Code", "言語：HTML, CSS, JavaScript"],
     image: [
+      {
+        src: "lp_mediasite/lp_media_site.png",
+        alt: "メディアサイトのトップ画像",
+        caption: "トップ画像",
+      },
       {
         src: "lp_mediasite/lp_mediasite_pc.png",
         alt: "メディアサイト",
@@ -286,6 +302,11 @@ export const works = [
     ],
     tech: ["ツール：Visual Studio Code", "言語：HTML, CSS, JavaScript"],
     image: [
+      {
+        src: "lp_js/lp_js.png",
+        alt: "JavaScript機能実装課題のトップ画像",
+        caption: "トップ画像",
+      },
       {
         src: "lp_js/lp_js_pc.png",
         alt: "JavaScript機能実装課題",

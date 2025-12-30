@@ -20,59 +20,58 @@ export default function WorkDetailPage({ params }: Props) {
       {/* タイトル */}
       <h1 className="text-3xl font-bold mb-6">{work.title}</h1>
 
-      {/* 画像 */}
-      {work.image && (
-        <div className="space-y-6 mb-10">
-          {work.image.map((img, index) =>
-            img.src.endsWith(".mp4") ? (
-              <video
+      <div className="flex flex-start  gap-[32px] max-w-[1080px] m-auto">
+        {work.image && (
+          <div className="flex flex-col flex-1 gap-[24px] p-[12px]">
+            {work.image.map((img, index) => (
+              <figure
                 key={index}
-                src={`/images/works/${img.src}`}
-                controls
-                className="w-full rounded"
-              />
-            ) : (
-              <figure key={index}>
-                <div className="w-[300px] h-[600px]">
-                  <Image
+                className="m-0 [margin-inline:0] [margin-block:0]"
+              >
+                {img.src.endsWith(".mp4") ? (
+                  <video
+                    src={`/images/works/${img.src}`}
+                    controls
+                    className="w-full h-auto"
+                  />
+                ) : (
+                  <img
                     src={`/images/works/${img.src}`}
                     alt={img.alt}
-                    fill
-                    className="object-contain"
+                    className="w-full h-auto"
                   />
-                </div>
-                <figcaption className="text-sm text-center text-gray-500 mt-2">
-                  {img.caption}
-                </figcaption>
+                )}
+
+                {img.caption && (
+                  <figcaption className="text-sm text-center text-gray-500 mt-2">
+                    {img.caption}
+                  </figcaption>
+                )}
               </figure>
-            )
-          )}
-        </div>
-      )}
-
-      {/* 説明（sections） */}
-      <section className="space-y-6 mb-10">
-        {work.sections.map((section, index) => (
-          <div key={index}>
-            <h2 className="font-semibold text-lg mb-1">
-              {section.heading}
-            </h2>
-            <p className="whitespace-pre-line text-gray-700">
-              {section.body}
-            </p>
+            ))}
           </div>
-        ))}
-      </section>
+        )}
 
-      {/* 技術スタック */}
-      <section>
-        <h2 className="font-semibold text-lg mb-3">使用技術</h2>
-        <ul className="list-disc list-inside space-y-1">
-          {work.tech.map((t, index) => (
-            <li key={index}>{t}</li>
+        {/* 説明（sections） */}
+        <section className="flex-1 space-y-6 mb-10">
+          {work.sections.map((section, index) => (
+            <div key={index}>
+              <h2 className="font-semibold text-lg mb-1">{section.heading}</h2>
+              <p className="whitespace-pre-line text-gray-700">
+                {section.body}
+              </p>
+            </div>
           ))}
-        </ul>
-      </section>
+          <div>
+            <h2 className="font-semibold text-lg mb-1">【使用技術】</h2>
+            <ul className="list-disc list-inside space-y-1 text-gray-700">
+              {work.tech.map((t, index) => (
+                <li key={index}>{t}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

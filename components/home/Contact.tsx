@@ -5,10 +5,10 @@ import React from "react";
 export default function Contact() {
   return (
     <>
-      <div className="w-[1000px] m-auto">
+      <div className="bg-[#fff] w-[1080px] m-auto pt-[60] pb-[60]">
         <h2 className="text-center">Contact</h2>
         <form action="">
-          <table className="w-[1000px] m-auto mb-[24px]">
+          <table className="w-[1089px] m-auto mb-[24px]">
             <tr>
               <th className="py-[24px] w-[40%]">お名前</th>
               <td className="w-[60%]">
