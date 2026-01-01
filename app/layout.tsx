@@ -3,6 +3,8 @@ import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
+import "./reset.css";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +22,13 @@ export const metadata: Metadata = {
 };
 
 // app/layout.tsx
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
+    <html lang="ja" className="scroll-smooth">
       <head>
         <script
           src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
@@ -33,6 +39,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-
-
