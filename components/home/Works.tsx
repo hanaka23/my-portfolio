@@ -1,38 +1,50 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { works } from "@/lib/works";
 
 export default function Works() {
   return (
-    <>
-    <div className="bg-[#000] w-full pt-[60] pb-[60]">
-      <h2 className="text-center text-[#fff]">Works</h2>
-      <div className="flex justify-center gap-[30] text-[#fff]">
-        <div className="text-center">
-          <div>
-            <a href=""><img className="w-[360] h-[240]" src="/images/IMG_3401.jpg" alt="頭部方向推定　画像" /></a>
-          </div>
-          <p>頭部方向推定を用いたカメラ操作アルゴリズム（IoT）</p>
-        </div>
+    <div className="bg-[#fff] max-w-[1080px] mx-auto py-[60px]">
+      <h2 className="text-center text-2xl font-semibold mb-10">
+        Skills
+      </h2>
 
-        <div className="text-center">
-          <div>
-            <a href=""><img className="w-[360] h-[240]" src="/images/Swift_quiz.jpg" alt="" /></a>
-          </div>
-          <p>クイズアプリ（Swift）</p>
-        </div>
-
-        <div className="text-center">
-          <div>
-            <a href=""><img className="w-[360] h-[240]" src="/images/Swift_lifegraph.jpg" alt="" /></a>
-          </div>
-          <p>人生グラフアプリ（Swift）</p>
-        </div> 
+      <div className="flex justify-center gap-[30px] flex-wrap w-full">
+        {works.map((work) => (
+          <Link
+            key={work.id}
+            href={`/works/${work.id}`}
+            className="
+              group
+              w-[360px]
+              transition
+              duration-300
+              ease-out
+              hover:-translate-y-2
+              hover:shadow-xl
+            "
+          >
+            <div className="bg-[#fff] rounded-lg overflow-hidden">
+              <div className="h-[240px] flex items-center justify-center">
+                <img
+                  src={`/images/works/${work.image?.[0]?.src ?? "noimage.png"}`}
+                  alt={work.image?.[0]?.alt ?? work.title}
+                  className="
+                    w-[90%]
+                    h-auto
+                    transition
+                    duration-300
+                    ease-out
+                    group-hover:scale-105
+                  "
+                />
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
-    
-    
-    
-    </>
-  )
+  );
 }

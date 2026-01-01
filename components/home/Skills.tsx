@@ -6,7 +6,7 @@ import RadarChart from "./RadarChart";
 export default function Skills() {
   return (
     <>
-    <div className="bg-[#fff] w-[1200px] m-auto pt-[60] pb-[60]">
+    <div className="bg-[#fff] w-[1080px] m-auto pt-[60] pb-[60]">
       <h2 className="text-center">Skills</h2>
       <div className="flex justify-center gap-[30] text-[#fff] w-full h-[500]">
          <RadarChart />

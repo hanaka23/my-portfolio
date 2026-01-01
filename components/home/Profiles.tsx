@@ -5,7 +5,7 @@ import React from "react";
 export default function Profiles() {
   return (
     <>
-      <div className="bg-[#fff] pt-[60] pb-[60] w-[1000px] m-auto">
+      <div className="bg-[#fff] w-[1080px] m-auto pt-[60] pb-[60]">
         <h2 className="text-center text-[#000]">Profiles</h2>
         <div>
           <div className="flex items-center gap-[24px]">
