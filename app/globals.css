@@ -15,9 +15,19 @@
 
 /* globals.css */
 @layer base {
+  *{
+    color: var(--color-text-main);
+  }
   p {
     margin: 0;
   }
+}
+
+:root{
+  --header-height: 64px;
+
+  --color-text-main: #1a1a1a;
+  --color-text-hover:#999999;
 }
 
 .animate-fadeInUp {

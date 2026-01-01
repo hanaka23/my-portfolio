@@ -1,36 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
 
-export default function Header() {
+type HeaderVariant = "top" | "work";
+
+export default function Header({ variant }: { variant: HeaderVariant }) {
   return (
-    <nav className="fixed right-[20px]">
-      <ol className="flex list-none gap-[20px]">
+    <nav
+      className={`fixed z-[999] w-full ${
+        variant === "work"
+          ? "bg-[#fff] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+          : ""
+      }`}
+    >
+      <ol
+        className="flex items-center justify-end pr-[24px]
+    list-none gap-[24px]
+    h-[var(--header-height)]
+    [&_a]:!font-bold
+    [&_a:hover]:text-[var(--color-text-hover)]
+    [&_a]:transition-colors
+    [&_a]:duration-200"
+      >
         <li>
-          <Link className="text-[#000] no-underline" href="#top">
-            top
-          </Link>
+          <Link href="/#top">top</Link>
         </li>
         <li>
-          <Link className="text-[#000] no-underline" href="#works">
-            works
-          </Link>
+          <Link href="/#works">works</Link>
         </li>
         <li>
-          <Link className="text-[#000] no-underline" href="#skills">
-            skills
-          </Link>
+          <Link href="/#skills">skills</Link>
         </li>
         <li>
-          <Link className="text-[#000] no-underline" href="#about">
-            about me
-          </Link>
+          <Link href="/#about">about me</Link>
         </li>
         <li>
-          <Link className="text-[#000] no-underline" href="#contact">
-            contact
-          </Link>
+          <Link href="/#contact">contact</Link>
         </li>
       </ol>
     </nav>

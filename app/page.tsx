@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Particle />
-      <Header />
+      <Header variant="top"/>
 
       <section id="top">
         <Top />

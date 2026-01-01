@@ -6,7 +6,7 @@ export default function AboutMe() {
   return (
     <>
       <div className="bg-[#fff] w-[1080px] m-auto pt-[60] pb-[60]">
-        <h2 className="text-center text-[#000]">About Me</h2>
+        <h2 className="text-center">About Me</h2>
         <div>
           <div className="flex items-center gap-[24px]">
             <div className="w-[200px] h-[200px] rounded-full overflow-hidden">

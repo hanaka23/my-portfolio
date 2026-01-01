@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { ReactNode } from "react";
 import "./reset.css";
 import "./globals.css";
+import { Noto_Sans_JP } from "next/font/google";
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["300", "500", "700"],
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +41,7 @@ export default function RootLayout({
           defer
         ></script>
       </head>
-      <body>{children}</body>
+      <body className={notoSansJP.className}>{children}</body>
     </html>
   );
 }
