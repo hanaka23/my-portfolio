@@ -8,7 +8,7 @@ export default function Works() {
   return (
     <div className="bg-[#fff] max-w-[1080px] mx-auto py-[60px]">
       <h2 className="text-center text-2xl font-semibold mb-10">
-        Skills
+        Works
       </h2>
 
       <div className="flex justify-center gap-[30px] flex-wrap w-full">
