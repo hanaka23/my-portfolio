@@ -29,7 +29,7 @@ export default function WorkDetailPage({ params }: Props) {
           <div className="flex gap-[32px]">
             {/* ===== 画像 ===== */}
             <div className="flex-1 pt-[64px]">
-              {work.image?.map((img, index) => (
+              {work.image?.slice(1).map((img, index) => (
                 <figure key={index} className="mb-[84px]">
                   {img.src.endsWith(".mp4") ? (
                     <video
@@ -63,7 +63,7 @@ export default function WorkDetailPage({ params }: Props) {
                   <h3 className="font-semibold text-[16px] my-[8px]">
                     {section.heading}
                   </h3>
-                  <p className="text-[12px]">{section.body}</p>
+                  <p className="text-[12px] whitespace-pre-line">{section.body}</p>
                 </div>
               ))}
 
