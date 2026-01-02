@@ -8,7 +8,7 @@ export default function AboutMe() {
       <div className="py-[32px] md:py-[64px]">
         <h3>About Me</h3>
         <div>
-          <div className="flex flex-col md:flex-row items-center gap-[24px]">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-[24px]">
             <div className="w-[140px] h-[140px] rounded-full overflow-hidden bg-[#b3aea8]">
               <img
                 className="object-cover w-full h-full scale-150"
