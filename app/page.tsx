@@ -19,7 +19,7 @@ export default function Page() {
         <Top />
       </section>
 
-      <div className="bg-[var(--color-base)] w-full px-[12px]">
+      <div className="bg-[var(--color-base)] w-full px-[12px] pb-[64px]">
         <div className="max-w-[1080px] m-auto">
           <section id="works">
             <Works />

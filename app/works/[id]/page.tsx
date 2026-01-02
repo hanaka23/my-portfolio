@@ -63,7 +63,7 @@ export default function WorkDetailPage({ params }: Props) {
                   <h5>
                     【使用技術】
                   </h5>
-                  <ul className="list-disc list-inside text-[10px] md:text-[12px] my-0">
+                  <ul className="list-disc list-inside font-thin text-[12px] md:text-[14px] my-0">
                     {work.tech.map((t, i) => (
                       <li key={i}>{t}</li>
                     ))}
