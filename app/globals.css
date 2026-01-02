@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* animations */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -13,9 +14,9 @@
   }
 }
 
-/* globals.css */
+/* base */
 @layer base {
-  *{
+  * {
     color: var(--color-text-main);
   }
   p {
@@ -23,11 +24,10 @@
   }
 }
 
-:root{
+:root {
   --header-height: 64px;
-
   --color-text-main: #1a1a1a;
-  --color-text-hover:#999999;
+  --color-text-hover: #999999;
 }
 
 .animate-fadeInUp {
