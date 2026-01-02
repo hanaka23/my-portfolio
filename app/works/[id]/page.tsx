@@ -1,6 +1,5 @@
 import { works } from "@/lib/works";
 import { notFound } from "next/navigation";
-import Header from "@/components/Header";
 
 type Props = {
   params: { id: string };
