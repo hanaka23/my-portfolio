@@ -9,7 +9,7 @@ export default function Header({ variant }: { variant: HeaderVariant }) {
     <nav
       className={`fixed z-[999] w-full ${
         variant === "work"
-          ? "bg-[#fff] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+          ? "bg-[var(--color-base)] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
           : ""
       }`}
     >

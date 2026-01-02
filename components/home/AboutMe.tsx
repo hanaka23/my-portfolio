@@ -5,18 +5,16 @@ import React from "react";
 export default function AboutMe() {
   return (
     <>
-      <div className="bg-[#fff] w-[1080px] m-auto pt-[60] pb-[60]">
-        <h2 className="text-center">About Me</h2>
+      <div className="py-[32px] md:py-[64px]">
+        <h3>About Me</h3>
         <div>
-          <div className="flex items-center gap-[24px]">
-            <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
-              <a href="">
-                <img
-                  className="object-cover w-full h-full scale-140"
-                  src="/images/ai_icon.png"
-                  alt="プロフィール　画像"
-                />
-              </a>
+          <div className="flex flex-col md:flex-row items-center gap-[24px]">
+            <div className="w-[140px] h-[140px] rounded-full overflow-hidden bg-[#b3aea8]">
+              <img
+                className="object-cover w-full h-full scale-150"
+                src="/images/ai_icon.png"
+                alt="プロフィール　画像"
+              />
             </div>
             <p>
               熊本県出身。熊本高専卒業。主に制御系と情報系を学習し、Python
