@@ -11,26 +11,18 @@ export default function WorkDetailPage({ params }: Props) {
 
   return (
     <>
-      <div className="py-[64px] max-w-[1080px] m-auto">
+      <div className="max-w-[1080px] m-auto">
         {/* タイトル */}
-        <h1 className="pl-[24px] text-3xl font-bold mb-6 w-full mx-auto px-4">
-          Works
-        </h1>
+        <h3 className="text-left px-[12px] my-[24px]">Works</h3>
         {/* ===== 背景付きエリア ===== */}
-        <div
-          className="
-            w-full
-            py-6
-            bg-[linear-gradient(to_right,#4d4d4d_50%,transparent_50%)]
-          "
-        >
+        <div className="w-full bg-[linear-gradient(to_right,#4d4d4d_50%,transparent_50%)]">
           {/* 中身（幅制限） */}
           <div className="w-full mx-auto px-4">
             <div className="flex gap-[32px]">
               {/* ===== 画像 ===== */}
-              <div className="flex-1 pt-[64px]">
+              <div className="flex-1 md:pt-[64px] pt-[24px]">
                 {work.image?.slice(1).map((img, index) => (
-                  <figure key={index} className="mb-[84px]">
+                  <figure key={index} className="md:mb-[84px] mb-[32px] ">
                     {img.src.endsWith(".mp4") ? (
                       <video
                         src={`/images/works/${img.src}`}
@@ -53,25 +45,25 @@ export default function WorkDetailPage({ params }: Props) {
                 ))}
               </div>
               {/* ===== 説明 ===== */}
-              <section className="flex-1">
-                <h2 className="text-[18px] font-bold mb-[24px]">
+              <section className="flex-1 pb-[64px]">
+                <h4>
                   {work.title}
-                </h2>
+                </h4>
                 {work.sections.map((section, i) => (
-                  <div key={i} className="mb-[48px]">
-                    <h3 className="font-semibold text-[16px] my-[8px]">
+                  <div key={i} className="mb-[24px] md:mb-[48px]">
+                    <h5 className="">
                       {section.heading}
-                    </h3>
-                    <p className="text-[12px] whitespace-pre-line">
+                    </h5>
+                    <p className="whitespace-pre-line">
                       {section.body}
                     </p>
                   </div>
                 ))}
                 <div>
-                  <h3 className="font-semibold text-[16px] my-[8px]">
+                  <h5>
                     【使用技術】
-                  </h3>
-                  <ul className="list-disc list-inside text-[12px] my-0">
+                  </h5>
+                  <ul className="list-disc list-inside text-[10px] md:text-[12px] my-0">
                     {work.tech.map((t, i) => (
                       <li key={i}>{t}</li>
                     ))}
