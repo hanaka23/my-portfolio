@@ -74,6 +74,8 @@
 
   --color-text-main: #1a1a1a;
   --color-text-hover: #999999;
+
+  --color-border-gray:#cccccc;
 }
 
 .animate-fadeInUp {
