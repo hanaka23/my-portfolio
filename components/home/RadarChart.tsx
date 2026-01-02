@@ -79,15 +79,14 @@ const SkillRadarCharts = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-6 p-6 bg-gray-900 text-white">
-      {/* 親幅を固定しつつレスポンシブ対応 */}
-      <div className="w-full sm:w-[32%] max-w-[400px] aspect-square">
+    <div className="flex flex-wrap justify-center gap-6 p-6 bg-[var(--color-base)]">
+      <div className="w-full md:w-[32%] max-w-[400px] aspect-square">
         <Radar data={frontendData} options={options} />
       </div>
-      <div className="w-full sm:w-[32%] max-w-[400px] aspect-square">
+      <div className="w-full md:w-[32%] max-w-[400px] aspect-square">
         <Radar data={mobileData} options={options} />
       </div>
-      <div className="w-full sm:w-[32%] max-w-[400px] aspect-square">
+      <div className="w-full md:w-[32%] max-w-[400px] aspect-square">
         <Radar data={backendData} options={options} />
       </div>
     </div>

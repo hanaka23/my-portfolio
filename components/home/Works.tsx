@@ -6,10 +6,8 @@ import { works } from "@/lib/works";
 
 export default function Works() {
   return (
-    <div className="bg-[#fff] max-w-[1080px] mx-auto py-[60px]">
-      <h2 className="text-center text-2xl font-semibold mb-10">
-        Works
-      </h2>
+    <>
+      <h3>Works</h3>
 
       <div className="flex justify-center gap-[30px] flex-wrap w-full">
         {works.map((work) => (
@@ -26,7 +24,7 @@ export default function Works() {
               hover:shadow-xl
             "
           >
-            <div className="bg-[#fff] rounded-lg overflow-hidden">
+            <div className="bg-[var(--color-base)] rounded-lg overflow-hidden">
               <div className="h-[240px] flex items-center justify-center">
                 <img
                   src={`/images/works/${work.image?.[0]?.src ?? "noimage.png"}`}
@@ -45,6 +43,6 @@ export default function Works() {
           </Link>
         ))}
       </div>
-    </div>
+    </>
   );
 }

@@ -8,10 +8,10 @@ export default function Top() {
     <>
       <div className="h-screen w-screen relative">
         <div className="w-fit h-fit absolute top-[0] right-[0] bottom-[0] left-[0] m-auto">
-          <h1 className="">
+          <h1>
             <AnimatedText text="HIRAKAWA HANAKA" />
           </h1>
-          <h2 className="">
+          <h2>
             <AnimatedText text="Engineer Portforio" />
           </h2>
         </div>

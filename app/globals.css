@@ -19,6 +19,27 @@
   * {
     color: var(--color-text-main);
   }
+  h1,
+  h1 * {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  h2,
+  h2 * {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  @media screen and (min-width: 768px) {
+    h3{
+      margin-bottom: 64px;
+    }
+  }
   p {
     margin: 0;
   }
@@ -26,6 +47,9 @@
 
 :root {
   --header-height: 64px;
+
+  --color-base: #ffffff;
+
   --color-text-main: #1a1a1a;
   --color-text-hover: #999999;
 }

@@ -45,7 +45,7 @@ export default function WorkDetailPage({ params }: Props) {
                       />
                     )}
                     {img.caption && (
-                      <figcaption className="text-[12px] text-center text-[#fff] mt-2">
+                      <figcaption className="text-[12px] text-center text-[var(--color-base)] mt-2">
                         {img.caption}
                       </figcaption>
                     )}
@@ -54,7 +54,9 @@ export default function WorkDetailPage({ params }: Props) {
               </div>
               {/* ===== 説明 ===== */}
               <section className="flex-1">
-                <h2 className="text-[18px] font-bold mb-[24px]">{work.title}</h2>
+                <h2 className="text-[18px] font-bold mb-[24px]">
+                  {work.title}
+                </h2>
                 {work.sections.map((section, i) => (
                   <div key={i} className="mb-[48px]">
                     <h3 className="font-semibold text-[16px] my-[8px]">
