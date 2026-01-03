@@ -6,6 +6,7 @@ type FormValues = {
   name: string;
   email: string;
   message: string;
+  company: string; // ← ハニーポット
 };
 
 export default function Form() {
@@ -13,7 +14,23 @@ export default function Form() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<FormValues>();
+
+  const onSubmit = async (data: FormValues) => {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      alert("送信が完了しました");
+      reset();
+    } else {
+      alert("送信に失敗しました");
+    }
+  };
 
   return (
     <div className="py-[32px] md:py-[64px]">
@@ -22,21 +39,27 @@ export default function Form() {
       </div>
 
       <form
-        action="/api/contact"
-        method="POST"
-        onSubmit={handleSubmit(() => {})}
+        onSubmit={handleSubmit(onSubmit)}
         className="mx-auto max-w-xl"
+        noValidate
       >
         <div className="grid grid-cols-1 gap-y-6">
+
+          {/* ハニーポット（人間には見せない） */}
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            {...register("company")}
+          />
+
           {/* Name */}
           <div>
-            <label className="block text-sm/6 font-semibold">お名前</label>
+            <label className="block text-sm font-semibold">お名前</label>
             <input
-              {...register("name", {
-                required: "お名前は必須です",
-              })}
-              name="name"
-              className="block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
+              {...register("name", { required: "お名前は必須です" })}
+              className="mt-2 block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
             />
             {errors.name && (
               <p className="mt-1 text-sm text-red-600">
@@ -47,21 +70,19 @@ export default function Form() {
 
           {/* Email */}
           <div>
-            <label className="block text-sm/6 font-semibold">
+            <label className="block text-sm font-semibold">
               メールアドレス
             </label>
             <input
+              type="email"
               {...register("email", {
                 required: "メールアドレスは必須です",
                 pattern: {
-                  value:
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                   message: "正しいメールアドレスを入力してください",
                 },
               })}
-              name="email"
-              type="email"
-              className="block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
+              className="mt-2 block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
             />
             {errors.email && (
               <p className="mt-1 text-sm text-red-600">
@@ -72,20 +93,17 @@ export default function Form() {
 
           {/* Message */}
           <div>
-            <label className="block text-sm/6 font-semibold">
-              お問い合わせ
-            </label>
+            <label className="block text-sm font-semibold">お問い合わせ</label>
             <textarea
+              rows={4}
               {...register("message", {
-                required: "お問い合わせ内容は必須です",
+                required: "お問い合わせ内容を入力してください",
                 minLength: {
                   value: 10,
-                  message: "10文字以上入力してください",
+                  message: "10文字以上で入力してください",
                 },
               })}
-              name="message"
-              rows={4}
-              className="block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
+              className="mt-2 block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
             />
             {errors.message && (
               <p className="mt-1 text-sm text-red-600">

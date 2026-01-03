@@ -2,17 +2,18 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const formData = await req.formData();
+  const { name, email, message, company } = await req.json();
 
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const message = formData.get("message");
+  // 🤖 スパム判定（ハニーポット）
+  if (company) {
+    return NextResponse.json(
+      { message: "Spam detected" },
+      { status: 200 } // ← あえて成功扱い
+    );
+  }
 
   if (!name || !email || !message) {
-    return NextResponse.json(
-      { error: "Invalid form data" },
-      { status: 400 }
-    );
+    return NextResponse.json({ message: "Invalid request" }, { status: 400 });
   }
 
   const transporter = nodemailer.createTransport({
@@ -27,28 +28,20 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail({
-      from: `"お問い合わせ" <${process.env.MAIL_USER}>`,
+      from: process.env.MAIL_USER,
       to: process.env.MAIL_TO,
-      replyTo: String(email),
-      subject: "【お問い合わせ】ポートフォリオサイト",
+      subject: "お問い合わせが届きました",
       text: `
 お名前: ${name}
 メール: ${email}
 
-内容:
 ${message}
       `,
     });
 
-    return NextResponse.redirect(
-      new URL("/?success=1", req.url),
-      303
-    );
+    return NextResponse.json({ message: "Success" });
   } catch (error) {
     console.error(error);
-    return NextResponse.redirect(
-      new URL("/?error=1", req.url),
-      303
-    );
+    return NextResponse.json({ message: "Mail send failed" }, { status: 500 });
   }
 }
