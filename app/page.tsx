@@ -8,6 +8,7 @@ import Works from "@/components/home/Works";
 import Skills from "@/components/home/Skills";
 import AboutMe from "@/components/home/AboutMe";
 import Contact from "@/components/home/Contact";
+import Form from "@/components/home/Form";
 
 export default function Page() {
   return (
@@ -33,6 +34,7 @@ export default function Page() {
           <section id="contact">
             <Contact />
           </section>
+          <Form />
         </div>
       </div>
     </>
