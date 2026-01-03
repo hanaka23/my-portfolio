@@ -1,68 +1,107 @@
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
+"use client";
+
+import { useForm } from "react-hook-form";
+
+type FormValues = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 export default function Form() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>();
+
   return (
     <div className="py-[32px] md:py-[64px]">
       <div className="mx-auto text-center">
         <h3>Contact</h3>
       </div>
 
-      <form action="/api/contact" method="POST" className="mx-auto max-w-xl">
+      <form
+        action="/api/contact"
+        method="POST"
+        onSubmit={handleSubmit(() => {})}
+        className="mx-auto max-w-xl"
+      >
         <div className="grid grid-cols-1 gap-y-6">
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm/6 font-semibold">
-              お名前
-            </label>
-            <div className="mt-2.5">
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autoComplete="name"
-                className="block w-full rounded-md px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-              />
-            </div>
+            <label className="block text-sm/6 font-semibold">お名前</label>
+            <input
+              {...register("name", {
+                required: "お名前は必須です",
+              })}
+              name="name"
+              className="block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
+            />
+            {errors.name && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.name.message}
+              </p>
+            )}
           </div>
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm/6 font-semibold">
+            <label className="block text-sm/6 font-semibold">
               メールアドレス
             </label>
-            <div className="mt-2.5">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                className="block w-full rounded-md px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-              />
-            </div>
+            <input
+              {...register("email", {
+                required: "メールアドレスは必須です",
+                pattern: {
+                  value:
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "正しいメールアドレスを入力してください",
+                },
+              })}
+              name="email"
+              type="email"
+              className="block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
+            />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm/6 font-semibold">
+            <label className="block text-sm/6 font-semibold">
               お問い合わせ
             </label>
-            <div className="mt-2.5">
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="block w-full rounded-md px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-              />
-            </div>
+            <textarea
+              {...register("message", {
+                required: "お問い合わせ内容は必須です",
+                minLength: {
+                  value: 10,
+                  message: "10文字以上入力してください",
+                },
+              })}
+              name="message"
+              rows={4}
+              className="block w-full rounded-md px-3.5 py-2 outline outline-1 outline-gray-300"
+            />
+            {errors.message && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.message.message}
+              </p>
+            )}
           </div>
         </div>
 
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            disabled={isSubmitting}
+            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-white disabled:opacity-50"
           >
-            送信
+            {isSubmitting ? "送信中..." : "送信"}
           </button>
         </div>
       </form>
