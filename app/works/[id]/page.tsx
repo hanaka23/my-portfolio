@@ -1,12 +1,16 @@
 import { works } from "@/lib/works";
 import { notFound } from "next/navigation";
 
-type Props = {
-  params: { id: string };
+type PageProps = {
+  params: Promise<{
+    id: string;
+  }>;
 };
 
-export default function WorkDetailPage({ params }: Props) {
-  const work = works.find((w) => w.id === params.id);
+export default async function WorkDetailPage({ params }: PageProps) {
+  const { id } = await params;
+
+  const work = works.find((w) => w.id === id);
   if (!work) notFound();
 
   return (
@@ -46,23 +50,15 @@ export default function WorkDetailPage({ params }: Props) {
               </div>
               {/* ===== 説明 ===== */}
               <section className="flex-1 pb-[64px]">
-                <h4>
-                  {work.title}
-                </h4>
+                <h4>{work.title}</h4>
                 {work.sections.map((section, i) => (
                   <div key={i} className="mb-[24px] md:mb-[48px]">
-                    <h5 className="">
-                      {section.heading}
-                    </h5>
-                    <p className="whitespace-pre-line">
-                      {section.body}
-                    </p>
+                    <h5 className="">{section.heading}</h5>
+                    <p className="whitespace-pre-line">{section.body}</p>
                   </div>
                 ))}
                 <div>
-                  <h5>
-                    【使用技術】
-                  </h5>
+                  <h5>【使用技術】</h5>
                   <ul className="list-disc list-inside font-thin text-[12px] md:text-[14px] my-0">
                     {work.tech.map((t, i) => (
                       <li key={i}>{t}</li>
