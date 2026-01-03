@@ -32,9 +32,9 @@ export default function Page() {
             <AboutMe />
           </section>
           <section id="contact">
-            <Contact />
+            <Form />
           </section>
-          <Form />
+          
         </div>
       </div>
     </>
