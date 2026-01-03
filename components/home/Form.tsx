@@ -7,14 +7,11 @@ export default function Form() {
         <h3>Contact</h3>
       </div>
 
-      <form action="#" method="POST" className="mx-auto max-w-xl">
+      <form action="/api/contact" method="POST" className="mx-auto max-w-xl">
         <div className="grid grid-cols-1 gap-y-6">
           {/* Name */}
           <div>
-            <label
-              htmlFor="name"
-              className="block text-sm/6 font-semibold"
-            >
+            <label htmlFor="name" className="block text-sm/6 font-semibold">
               お名前
             </label>
             <div className="mt-2.5">
@@ -30,10 +27,7 @@ export default function Form() {
 
           {/* Email */}
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm/6 font-semibold"
-            >
+            <label htmlFor="email" className="block text-sm/6 font-semibold">
               メールアドレス
             </label>
             <div className="mt-2.5">
@@ -49,10 +43,7 @@ export default function Form() {
 
           {/* Message */}
           <div>
-            <label
-              htmlFor="message"
-              className="block text-sm/6 font-semibold"
-            >
+            <label htmlFor="message" className="block text-sm/6 font-semibold">
               お問い合わせ
             </label>
             <div className="mt-2.5">
