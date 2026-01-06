@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# my-portfolio
 
-## Getting Started
+ポートフォリオサイト（Next.js + TypeScript + Tailwind CSS）
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+このリポジトリは、私のポートフォリオサイトのソースコードです。Next.js（App Router）と TypeScript、Tailwind CSS を使って実装されています。作品一覧、各作品のページ、問い合わせ API などを含みます。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 主な特徴
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js（App Router） + TypeScript
+- Tailwind CSS によるスタイリング
+- 作品（works）一覧と詳細ページ
+- 問い合わせ API エンドポイント（`/api/contact`）
+- 画像・メディアは `public/images` に配置
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 技術スタック
 
-## Learn More
+- Node.js
+- Next.js
+- TypeScript
+- Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+## 必要条件
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (推奨: 16 以上)
+- npm (または pnpm/yarn)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ローカルでの起動方法
 
-## Deploy on Vercel
+1. リポジトリをクローン
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   git clone <このリポジトリの URL>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. 依存関係をインストール
+
+   npm install
+
+3. 開発サーバーを起動
+
+   npm run dev
+
+4. ブラウザで http://localhost:3000 を開く
+
+## ビルド / 本番起動
+
+- ビルド
+
+  npm run build
+
+- 本番サーバー起動（ローカル）
+
+  npm run start
+
+
+## フォルダ構成（主要）
+
+- `app/` - Next.js App Router のルート（ページ、レイアウト、API）
+  - `app/api/contact/route.ts` - 問い合わせ用の API エンドポイント
+  - `app/works/[id]/` - 作品詳細のルーティング
+- `components/` - 再利用コンポーネント
+- `lib/` - 作品データなど（`lib/works.ts`）
+- `public/` - 画像や静的ファイル
+  - `public/images/works/` - 各作品の画像フォルダ
+- `types/` - TypeScript の型定義
+- `styles/` または `app/globals.css`, `reset.css` - グローバルなスタイル
+
+
+## API（問い合わせ）
+
+- POST `/api/contact` に問い合わせのデータを送信すると、サーバー側で処理します（`app/api/contact/route.ts` を参照）。
+
+
+## ライセンス
+
+### ソースコード
+本プロジェクトのソースコードは MIT ライセンスのもとで公開されています。
+
+### デザイン・コンテンツ
+本サイトに含まれるデザイン、画像、文章などのコンテンツは © 2026 hirakawa hanaka に帰属します。
+無断での使用・転載は禁止します。
+
