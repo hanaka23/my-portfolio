@@ -8,7 +8,7 @@ export default function Skills() {
     <>
       <div className="py-[32px] md:py-[64px]">
         <h3 className="text-center">Skills</h3>
-        <div className="flex justify-center gap-[30] w-full h-[500]">
+        <div className="">
           <RadarChart />
         </div>
         <div className="w-fit ml-auto">
